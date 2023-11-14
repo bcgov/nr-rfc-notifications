@@ -5,6 +5,9 @@ import os
 """ simple script to extract hierarchical basin / sub-basin information from a 
 shapefile and write it to a json file.  Used to inject this information into a 
 chefs / forms.io form.
+
+# useful gdal doc:
+https://pcjericks.github.io/py-gdalogr-cookbook/vector_layers.html
 """
 layer = None
 ds = None
