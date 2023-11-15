@@ -1,7 +1,8 @@
 # Introduction
 
 The following document provides detailed information on the components
-that make up the architecture diagram below. 
+that make up the architecture diagram below. This is a proposed architecture
+for one possible approach.
 
 <img src="./Architecture.png" width="650px">
 
