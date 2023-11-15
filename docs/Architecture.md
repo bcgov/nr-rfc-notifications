@@ -28,10 +28,31 @@ be hosted on openshift.
 
 Openshift namespaces have been provisioned.
 
-## Frontend
+## Alerting Frontend
 
 Making the assumption that this will be some kind of typescript/javascript based
-Single Page App (SPA) frontend, using one of the popular 
+Single Page App (SPA) frontend, using one of the popular javascript/typscript 
+frontend frameworks.  The application will have a public read only view that
+displays a map with all the various alerts that are currently active for the province
+
+Users will be able to click on individual events and see the information associated
+with those events.
+
+Authenticated users will have additional buttons populated, allowing for:
+* Create New Alert
+* Edit Existing Alert
+
+**Create** will provide a new view that allows users to create a new alert.
+**Edit** will prompt the user to select the event that they wish to edit on the map,
+allowing them to update the alert
+
+
+
+## Database
+
+Likely use the postgres database that is already configured for deployment by the 
+[quickstart template](https://github.com/bcgov/quickstart-openshift-backends).  The
+template also includes functionality to address database backups.
 
 ## Deployments
 
@@ -39,3 +60,26 @@ Ideally re-use the quickstart to create an application deployment
 
 * [base quickstart repo for node/typescript/javascript apps](https://github.com/bcgov/quickstart-openshift)
 * [if using java/go/python backend](https://github.com/bcgov/quickstart-openshift-backends)
+
+## Backend
+
+The backend will be a pretty standard rest api.  It will be authenticated using 
+the JWT that the frontend has negotiated with keycloak.  The backend will use logic
+to fire off events to the message queue.
+
+## Message Queue
+
+The message queue, will essentially play the role of broker in between the alerting
+authoring application and the downstream services that issue the actual alerts.  The
+messages that are sent to the message queue will include the alert id, and a change
+in the status.
+
+## Alerting
+
+This will be a completely separate service.  It will subscribe to the message queue, 
+and will include logic that determines what needs to take place with respect to the 
+issuing / updating / cancelling of alerts.  The message queue will only identify that
+something has happened.  The alerting service will then communicate with the api 
+using an api key, to pull any additional information necessary with respect to the 
+actual alert event.
+
