@@ -3,4 +3,9 @@
 # River Forecast Advisories
 
 Creating an application that will standardize and facilitate the creation of 
-hydrological alerts.  Project is in its early phases.
+hydrological alerts, and enable the issuing of a common alerting protocol 
+feed (https://www.publicsafety.gc.ca/cnt/rsrcs/pblctns/capcp-ntro-rl-st/index-en.aspx).  
+
+# Architecture
+
+[link to a possible architecture](docs/architecture/Architecture.md)

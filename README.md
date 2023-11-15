@@ -5,3 +5,4 @@ Notification / Alerting authoring application that will standardize and facilita
 ## Architecture
 
 [Architecture Documentation](./docs/Architecture.md)
+
