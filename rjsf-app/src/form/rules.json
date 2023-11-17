@@ -1,0 +1,13 @@
+[
+    {
+      "conditions": {
+        "firstName": "truthy"
+      },
+      "event": {
+        "type": "log",
+        "params": {
+          "foo": "bar"
+        }
+      }
+    }
+  ]

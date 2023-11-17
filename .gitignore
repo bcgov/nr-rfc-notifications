@@ -3,3 +3,6 @@ node_modules/**
 junk/**
 
 docs/.$Architecture.drawio.bkp
+
+node_modules/**
+map-form-app/node_modules/**
