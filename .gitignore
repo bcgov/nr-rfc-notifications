@@ -3,3 +3,12 @@ node_modules/**
 junk/**
 
 docs/.$Architecture.drawio.bkp
+
+.env
+
+venv/**
+scripts/python/constants.py
+scripts/python/junk.py
+scripts/python/old_code.py
+scripts/python/modify_bucket_policy.py
+scripts/python/create_bucket_user.py
